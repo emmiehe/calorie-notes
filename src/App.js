@@ -26,7 +26,7 @@ class Note extends React.Component {
           scale={1}
           onStop={() => this.setState({value: this.state.value+1})}
         >
-          <Paper className="handle" style={{background: "#F6C492", color: "#f0644b", padding: "1rem", margin: "2rem"}}>
+          <Paper className="handle" style={{background: "#f0644b", color: "peachpuff", padding: "1rem", margin: "1rem"}}>
             <div>
               <span style={{marginRight: "2rem"}}><strong>{this.props.calories}</strong> calories of <strong>{this.props.name}</strong> logged at {this.props.timestamp}</span>
             </div>
@@ -78,11 +78,11 @@ class Form extends React.Component {
 
   render(){
     return (
-      <Paper style={{width: "15rem", margin: "2rem", padding: "1rem"}}>
+      <Paper style={{width: "15rem", margin: "1rem", padding: "1rem", borderRadius: "10px", backgroundColor: "#ffff98"}}>
         <form onSubmit={this.handleSubmit}>
-          <input style={{margin: "1rem"}} value={this.state.name} placeholder="Food" onChange={this.handleChangeName}/>
-          <input style={{margin: "1rem"}} type="number" value={this.state.calories} placeholder="Calories" onChange={this.handleChangeCalories}/>
-          <button type="submit" style={{backgroundColor: "green", margin: "1rem"}}>Log</button>
+          <input style={{margin: "1rem", border: "none", height: "5vh", width:"80%"}} value={this.state.name} placeholder="Food" onChange={this.handleChangeName}/>
+          <input style={{margin: "1rem", border: "none", height: "5vh", width:"80%"}} type="number" value={this.state.calories} placeholder="Calories" onChange={this.handleChangeCalories}/>
+          <button type="submit" style={{backgroundColor: "#f0644b", margin: "1rem", padding: "0.5rem", borderRadius: "5px", color: "white", border: "none"}}>Log</button>
         </form>
       </Paper>
     )
@@ -118,8 +118,8 @@ class App extends React.Component {
     return (
       <div className="main">
         <Form addItem={this.addItem}/>
-        <div style={{flexDirection: "row", flexWrap: "wrap", width: "60%"}}>
-          <h1 style={{padding: "3rem"}}>Total Calories: {this.state.total_calories}</h1>
+        <div style={{flexDirection: "row", flexWrap: "wrap", width: "75%"}}>
+          <h1 style={{padding: "1rem", color: "#f0644b"}}>Total Calories: {this.state.total_calories}</h1>
           {this.state.items.map((note) => <Note key={note.key} timestamp={note.timestamp} style={{width: "100%"}} name={note.name} calories={note.calories}/>)}
         </div>
       </div>

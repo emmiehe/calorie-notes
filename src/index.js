@@ -6,6 +6,10 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <h2 id="navbar" className="navbar">
+      <a href="https://ancient-harbor-28509.herokuapp.com/">Go to Portfolio</a>
+    </h2>
+    <div><h3 style={{margin: "0.5rem", padding: "1rem", minWidth: "36vh", color: "#f0644b"}}>Calorie notes is a simple application built with React.js. It allows users to add draggable notes. It also updates the total calories accordingly.</h3></div>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
